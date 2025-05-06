@@ -15,6 +15,9 @@ open class SmartDevice(val name: String, val category: String) {
     open fun turnOff() {
         deviceStatus = "off"
     }
+    fun printDeviceInfo(){
+        println("Device name: $name, category: $category, type: $deviceType")
+    }
 }
 
 class SmartTvDevice(deviceName: String, deviceCategory: String) :
@@ -34,6 +37,16 @@ class SmartTvDevice(deviceName: String, deviceCategory: String) :
     fun nextChannel() {
         channelNumber++
         println("Channel number increased to $channelNumber.")
+    }
+
+    fun decreaseVolume(){
+        speakerVolume - 1
+        println("Speaker volume increased to $speakerVolume")
+
+        fun previousChannel(){
+            channelNumber - 1
+            println("Channel number decreased to $channelNumber")
+        }
     }
 
     override fun turnOn() {
@@ -61,6 +74,12 @@ class SmartLightDevice(deviceName: String, deviceCategory: String) :
         brightnessLevel++
         println("Brightness increased to $brightnessLevel.")
     }
+
+    fun decreaseBrightness() {
+        brightnessLevel - 1
+        println("Brightness decreased to $brightnessLevel.")
+    }
+
 
     override fun turnOn() {
         super.turnOn()

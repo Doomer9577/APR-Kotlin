@@ -1,3 +1,4 @@
+import java.util.jar.Attributes.Name
 import kotlin.properties.ReadWriteProperty
 import kotlin.reflect.KProperty
 
@@ -42,12 +43,21 @@ class SmartTvDevice(deviceName: String, deviceCategory: String) :
     fun decreaseVolume(){
         speakerVolume - 1
         println("Speaker volume increased to $speakerVolume")
+    }
+
+    fun currentChannelNumber() : Int{
+
+        return channelNumber
+    }
+
+
+
 
         fun previousChannel(){
             channelNumber - 1
             println("Channel number decreased to $channelNumber")
         }
-    }
+
 
     override fun turnOn() {
         super.turnOn()
@@ -116,8 +126,22 @@ class SmartHome(
         smartTvDevice.increaseSpeakerVolume()
     }
 
+    fun deacreaseTvVolume() {
+        smartTvDevice.decreaseVolume()
+    }
+
     fun changeTvChannelToNext() {
         smartTvDevice.nextChannel()
+    }
+
+    fun changeTvChannelToPrevious()
+    {
+        smartTvDevice.previousChannel()
+    }
+
+    fun printSmartTvInfo()
+    {
+        println("Channel number: ${smartTvDevice.currentChannelNumber()} ")
     }
 
     fun turnOnLight() {

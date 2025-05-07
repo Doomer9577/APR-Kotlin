@@ -138,6 +138,9 @@ class SmartHome(
         turnOffTv()
         turnOffLight()
     }
+
+    
+
 }
 
 class RangeRegulator(

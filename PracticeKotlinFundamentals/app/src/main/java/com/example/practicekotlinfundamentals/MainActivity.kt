@@ -1,47 +1,17 @@
 package com.example.practicekotlinfundamentals
 
-import android.os.Bundle
-import androidx.activity.ComponentActivity
-import androidx.activity.compose.setContent
-import androidx.activity.enableEdgeToEdge
-import androidx.compose.foundation.layout.fillMaxSize
-import androidx.compose.foundation.layout.padding
-import androidx.compose.material3.Scaffold
-import androidx.compose.material3.Text
-import androidx.compose.runtime.Composable
-import androidx.compose.ui.Modifier
-import androidx.compose.ui.tooling.preview.Preview
-import com.example.practicekotlinfundamentals.ui.theme.PracticeKotlinFundamentalsTheme
+fun main() {
+    val morningNotification = 51
+    val eveningNotification = 135
 
-class MainActivity : ComponentActivity() {
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-        enableEdgeToEdge()
-        setContent {
-            PracticeKotlinFundamentalsTheme {
-                Scaffold(modifier = Modifier.fillMaxSize()) { innerPadding ->
-                    Greeting(
-                        name = "Android",
-                        modifier = Modifier.padding(innerPadding)
-                    )
-                }
-            }
-        }
-    }
+    printNotificationSummary("morning", morningNotification)
+    printNotificationSummary("evening", eveningNotification)
 }
 
-@Composable
-fun Greeting(name: String, modifier: Modifier = Modifier) {
-    Text(
-        text = "Hello $name!",
-        modifier = modifier
-    )
-}
-
-@Preview(showBackground = true)
-@Composable
-fun GreetingPreview() {
-    PracticeKotlinFundamentalsTheme {
-        Greeting("Android")
+fun printNotificationSummary(timeOfDay: String, numberOfMessages: Int) {
+    if (numberOfMessages < 100) {
+        println("You have $numberOfMessages $timeOfDay notifications!")
+    } else {
+        println("Your phone is blowing up! You have 99+ $timeOfDay notifications!!!")
     }
 }

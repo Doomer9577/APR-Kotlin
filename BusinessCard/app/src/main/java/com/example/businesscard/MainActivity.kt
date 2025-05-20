@@ -29,6 +29,7 @@ import com.example.businesscard.ui.theme.BusinessCardTheme
 
 
 
+
 class MainActivity : ComponentActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
